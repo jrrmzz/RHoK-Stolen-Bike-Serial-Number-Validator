@@ -13,10 +13,12 @@ jQuery(function() {
        }
     });
 
+/*
 	$('.answer').toggle();
 	$('.question').click(function() {
 		$('.answer').slideToggle('fast');
 	});
+*/
 	
 	$('#serialText #submit').click(function() {
 	  $.POST('checkSerial', function(data) {
