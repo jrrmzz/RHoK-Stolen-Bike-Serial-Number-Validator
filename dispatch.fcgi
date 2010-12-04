@@ -9,7 +9,7 @@ import simplejson
 import re
 
 def myapp(environ, start_response):
-    start_response('200 OK', [('Content-Type', 'text/plain')])
+    start_response('200 OK', [('Content-Type', 'text/html')])
     qs = cgi.parse_qs(environ['QUERY_STRING'])
 
     response = {}
@@ -24,7 +24,7 @@ def myapp(environ, start_response):
 	response['status'] = 'fail' 
 	response['data']   = [] 
 
-    return cpic.format_result('iphone/result.html', '<!-- $CONTENT -->', response['data'])
+    return str(cpic.format_result('iphone/result.html', '<!-- $CONTENT -->', response['data']))
 
 if __name__ == '__main__':
     from fcgi import WSGIServer
