@@ -20,14 +20,14 @@ input[type=text] {
 body {
     font-size: 20px;
     line-height: 1.5em;
-    font-family: tahoma, arial, sans-serif; 
+    font-family: Helvetica, Arial, sans-serif;
     background: black;
     color: #ccc;
 }
     
 #container {
     position: relative;
-    width: 750px; 
+    width: 880px; 
     margin: 0 auto;
     margin-top: 4em; }
     
@@ -43,7 +43,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 230px;
+    width: 360px;
 }
 
 #intro {
@@ -67,8 +67,7 @@ body {
 #links {
     clear: left;
     font-size: 75%;
-    text-align: right;
 }
     #links a {
-            margin-left: 1em;
+            margin-right: 1em;
     }

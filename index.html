@@ -4,6 +4,7 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<title>Is This Bike Stolen?</title>
   <link href="css/bike.css" type="text/css" rel="stylesheet" media="screen, print, handheld">
+  <link href="css/mobile.css" type="text/css" rel="stylesheet" media="handheld">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" language="javascript"></script>
 	<script src="js/bike.js" type="text/javascript" language="javascript"></script>
 </head>
@@ -14,12 +15,15 @@
 		  <div id="intro">Is this bike stolen?</div>
 		  <form id="serialTest" action="../dispatch.fcgi">
 			  <input type="text" name="serial" id="serial">
-			  <input type="submit" name="submit" id="submit" class="submit" value="Find out">
+			  <input type="submit" name="submit" id="submit" class="submit" value="Search">
         <div class="result"></div>
 		  </form>
 		  <div class="question">
 		    Where can I find the serial # on a bike?
-			  <div class="answer">The majority of serial numbers are located under the bottom bracket where the two pedal cranks meet.</div>
+			  <div class="answer">
+			    <img src="images/serial_location.png" alt="Location of serial number on most bikes.">
+			    The majority of serial numbers are located under the bottom bracket where the two pedal cranks meet. Simply turn your bike upside down and record the number. If there is no serial number there then check places like the headset at the front of the bike or the rear stays. The diagram indicates the most common serial number locations. 
+			  </div>
 		  </div>
 		</div>
 	  <div id="links">
