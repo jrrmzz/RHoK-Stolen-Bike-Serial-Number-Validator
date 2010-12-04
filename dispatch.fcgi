@@ -12,11 +12,11 @@ def myapp(environ, start_response):
     qs = cgi.parse_qs(environ['QUERY_STRING'])
 
     response = { 'status': 'success' }
-    if 'ser' not in qs: 
+    if 'serial' not in qs: 
 	response['status'] = 'fail' 
 	response['data']  = [] 
     else:
-	serial = qs['ser'][0]
+	serial = qs['serial'][0]
         response['data'] = cpic.scrape(serial)
     return simplejson.dumps(response)
 
