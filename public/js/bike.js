@@ -1,6 +1,6 @@
 jQuery(function() {
     var serial_input_text = 'enter serial #';
-    $('#serial').val('enter serial #');
+    $('#serial').val(serial_input_text);
     $('#serial').focus(function() {
        if($(this).val() == serial_input_text) {
            $(this).val(''); // clear input
