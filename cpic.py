@@ -40,12 +40,12 @@ def format_result(template_path, replacement_token, entries):
     
     row_template = '''
     <ul class='field'>
-        <li><h3>Status:</h3> {Status}</li>
-        <li><h3>Color:</h3> {Color}</li>
-        <li><h3>Make</h3> {Make}</li>
-        <li><h3>Serial:</h3> {Serial}</li>
-        <li><h3>Model:</h3> {Model}</li>
-        <li><h3>Speeds:</h3> {Speeds}</li>
+        <li><h3>Status:</h3> %(Status)s</li>
+        <li><h3>Color:</h3> %(Color)s</li>
+        <li><h3>Make</h3> %(Make)s</li>
+        <li><h3>Serial:</h3> %(Serial)s</li>
+        <li><h3>Model:</h3> %(Model)s</li>
+        <li><h3>Speeds:</h3> %(Speeds)s</li>
     </ul>
     '''
     
@@ -54,7 +54,7 @@ def format_result(template_path, replacement_token, entries):
     else:
         content = ''
         for entry in entries:
-            content += row_template.format(**entry)
+            content += row_template % entry
     
     page = template.replace(replacement_token, content)
     return page
@@ -62,6 +62,6 @@ def format_result(template_path, replacement_token, entries):
 if __name__ == '__main__':
     serial_number = 'LY22361081'
     entries = scrape(serial_number)
-    print format_result('public/result.html', '<!-- $CONTENT -->', entries)
+    print format_result('iphone/result.html', '<!-- $CONTENT -->', entries)
     
     
