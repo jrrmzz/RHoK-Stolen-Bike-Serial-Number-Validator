@@ -24,7 +24,7 @@ def myapp(environ, start_response):
 	response['status'] = 'fail' 
 	response['data']   = [] 
 
-    return cpic.format_result('public/result.html', '<!-- $CONTENT -->', response['data'])
+    return cpic.format_result('iphone/result.html', '<!-- $CONTENT -->', response['data'])
 
 if __name__ == '__main__':
     from fcgi import WSGIServer
