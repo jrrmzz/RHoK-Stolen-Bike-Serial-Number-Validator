@@ -3,40 +3,28 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<title>BikeReg</title>
-	<style type="text/css" media="screen, print, handheld">
-	* {margin:0;padding:o;}
-	body {font-family:tahoma,arial,sans-serif;}
-	#container {width:300px;margin:0 auto;}
-	#intro {font-size:2em;}
-	.question {cursor:pointer;}
-	</style>
+  <link href="css/bike.css" type="text/css" rel="stylesheet" media="screen, print, handheld">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" language="javascript"></script>
-	<script type="text/javascript">
-	jQuery(function() {
-		$('.answer').toggle();
-		$('.question').click(function() {
-			$('.answer').slideToggle('fast');
-		});
-		$('#serialText #submit').click(function() {
-			$.POST();
-			return false;
-		});
-	});
-	</script>
+	<script src="js/bike.js" type="text/javascript" language="javascript"></script>
 </head>
 <body>
 	<div id="container">
-		<div id="intro">Is this bike stolen?</div>
-		<form id="serialTest" action="test">
-			<input type="text" name="serial" id="serial">
-			<input type="submit" name="submit" id="submit" class="submit">
-		</form>
-		<div class="question" id="where">Where can I find the serial# on a bike?
-			<div class="answer">Look under the pedals</div>
+	  <div id="image"></div>
+	  <div id="main">
+		  <div id="intro">Is this bike stolen?</div>
+		  <form id="serialTest" action="checkSerial">
+			  <input type="text" name="serial" id="serial">
+			  <input type="submit" name="submit" id="submit" class="submit" value="Find out">
+        <div class="result"></div>
+		  </form>
+		  <div class="question">
+		    Where can I find the serial # on a bike?
+			  <div class="answer">The majority of serial numbers are located under the bottom bracket where the two pedal cranks meet.</div>
+		  </div>
 		</div>
-	<div id="links">
-		<a href="https://webapp1.torontopolice.on.ca/BicycleRegistry/">Register your bike</a>
-		<a href="report.html">Report your bike as stolen</a>
-	</div>
+	  <div id="links">
+		  <a href="https://webapp1.torontopolice.on.ca/BicycleRegistry/">Register your bike</a>
+		  <a href="report.html">Report your bike as stolen</a>
+	  </div>
 </body>
 </html>
