@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^dispatch\.fcgi/ - [L]
+RewriteRule ^(.*)$ dispatch.fcgi/$1 [L]
+
