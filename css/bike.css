@@ -19,6 +19,7 @@ a:hover {
 }
 
 input {
+    border: solid 1px #ccc;
     -moz-border-radius: .25em;
     -webkit-border-radius: .25em;
     border-radius: .25em;
@@ -26,14 +27,13 @@ input {
 input[type=text] {
     width: 100%;
     background: transparent;
-    color: #ccc;
-    border: solid 1px #fff;
+    color: #fff;
     padding: .25em;
+    margin-bottom: 1em;
 }
 input[type=submit] {
     background: #56B6DE;
     color: #fff;
-    border: none;
     padding: .25em;
 }
     
@@ -60,15 +60,14 @@ input[type=submit] {
 
 #intro {
     font-size: 2em;
-    margin-bottom: .5em; }
+    margin-bottom: 1em; }
 
 .question {
-    margin-top: 2em;
+    margin-top: 4em;
     font-size: 75%;
     line-height: 1em;
     padding: 0.3em;
-    font-weight: bold;
-    cursor: pointer; }
+    font-weight: bold; }
     
 .answer {
     padding: 0.2em;
