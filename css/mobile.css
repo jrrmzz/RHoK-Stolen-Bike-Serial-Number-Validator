@@ -11,3 +11,11 @@ body {
     height: 0;
     background: transparent;
 }
+
+input {
+    font-size:1.25em;
+}
+
+input[type=text] {
+    font-size:1em;
+}
