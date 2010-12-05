@@ -87,7 +87,8 @@ div#header {
         background: #859ab3;
         color: black;
         font-weight: bold;
-        padding-left: 1em;
+        padding-left: 0em;
+        font-size: 1em;
     }
     #serialTest #serial {
         top: 0;
