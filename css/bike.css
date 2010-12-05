@@ -45,6 +45,12 @@ p {
     padding: 0.3em;
     font-weight: bold;
     text-align: center; }
+    .question a {
+        color: white;
+    }
+    .question a:hover {
+        text-decoration: none;
+    }
     
 .answer {
     padding: 0.2em;
@@ -60,11 +66,15 @@ p {
             margin-right: 1em;
     }
     
+div#header {
+    background: #111;
+    border: none;
+}
+    
 #serialTest {
-    border: solid 1px #ccc;
-    -moz-border-radius: .25em;
-    -webkit-border-radius: .25em;
-    border-radius: .25em;
+    -moz-border-radius: .5em;
+    -webkit-border-radius: .5em;
+    border-radius: .5em;
     width: 100%;
     height: 2em;
     position: relative;
@@ -74,20 +84,29 @@ p {
         height: 100%;
         border: none;
         display: inline-block;
+        background: #859ab3;
+        color: black;
+        font-weight: bold;
+        padding-left: 1em;
     }
     #serialTest #serial {
         top: 0;
         left: 0;
         width: 70%;
-        background: transparent;
-        color: #fff;
-        padding: .25em;
     }
     #serialTest .submit {
         top: 0;
         right: 0;
         width: 30%;
-        background: #56B6DE;
+        background: #c61919;
         color: #fff;
         padding: .25em;
     }
+    
+#links a {
+    display: block;
+}
+
+#footer {
+    text-align: right;
+}
