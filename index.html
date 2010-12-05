@@ -6,10 +6,7 @@
 	<title>Is This Bike Stolen?</title>
 	<link rel="stylesheet" href="iphone/stylesheets/iphone.css" /> 
 	<link rel="apple-touch-icon" href="iphone/images/apple-touch-icon.png" /> 
-	<!--
   <link href="css/bike.css" type="text/css" rel="stylesheet" media="screen, print, handheld">
-  <link href="css/mobile.css" type="text/css" rel="stylesheet" media="handheld">
-  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" language="javascript"></script>
 	<script src="js/bike.js" type="text/javascript" language="javascript"></script>
 </head>
@@ -18,25 +15,17 @@
 		<h1>Is This Bike Stolen?</h1> 
 	</div> 
 	<div id="container">
-	  <div id="image"></div>
 	  <div id="main">
-		  <div id="intro">Is this bike stolen?</div>
 		  <form id="serialTest" action="../dispatch.fcgi">
 			  <input type="text" name="serial" id="serial">
 			  <input type="submit" name="submit" id="submit" class="submit" value="Search">
         <div class="result"></div>
 		  </form>
 		  <div class="question">
-		    Where can I find the serial number on a bike?
-			  <div class="answer">
-			    <img src="images/serial_location.png" alt="Location of serial number on most bikes."><br/>
-                <p>The diagram indicates the most common serial number locations.  The majority of serial numbers are located under the bottom bracket where the two pedal cranks meet (yellow arrow). Simply turn your bike upside down and record the number. If there is no serial number there, then check places like the headset at the front of the bike or the rear stays (white arrows). 
-                </p><p>
-                Some letters in serial numbers are ambiguous and can be easily confused: O/0, 1/I, 2/Z, 5/S, 8/B.  If you are not sure about a particular letter, enter in both versions of the serial number.
-                </p><p>
-                Some bicycles have more than one serial number on the frame.  One of the numbers should be unique, while others can be product numbers shared with thousands of other bicycles. To be safe, check all the serial numbers you find!
-					</p><p>
-			  </div>
+		    <a href="find.html">
+		      Where can I find the serial number on a bike?<br />
+		      <img src="images/serial_location.png" alt="Location of serial number on most bikes.">
+		    </a>
 		  </div>
 		</div>
 	  <div id="links">
