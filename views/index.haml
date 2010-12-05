@@ -1,0 +1,15 @@
+#image
+#main
+  #intro Is this bike stolen?
+  %form#serialTest{:action => '/dispatch.fcgi'}
+    %input#serial{:type => 'text', :name => 'serial'}
+    %input.submit{:type => 'submit', :value => 'Search'}
+    .result
+  .question
+    Where can I find the serial # on a bike?
+    .answer
+      %img{:src => "/images/serial_location.png", :alt => "Location of serial number on most bikes."}
+      The majority of serial numbers are located under the bottom bracket where the two pedal cranks meet. Simply turn your bike upside down and record the number. If there is no serial number there then check places like the headset at the front of the bike or the rear stays. The diagram indicates the most common serial number locations. 
+#links
+  %a{:href => "https://webapp1.torontopolice.on.ca/BicycleRegistry/"} Register your bike
+  %a{:href => '/'} Report your bike as stolen

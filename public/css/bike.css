@@ -46,7 +46,7 @@ input[type=submit] {
 #image {
     width: 500px;
     height: 375px;
-    background: url('../images/home.jpg') no-repeat;
+    background: url('/images/home.jpg') no-repeat;
     float: left;
     margin-right: 2em;
 }

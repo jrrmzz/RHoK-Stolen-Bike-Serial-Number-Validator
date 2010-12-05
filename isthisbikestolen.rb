@@ -7,7 +7,7 @@ configure do
 end
 
 get '/' do
-  redirect '/index.html' # WTF?
+  haml :index
 end
 
 get '/register' do
