@@ -1,0 +1,21 @@
+$(function() {
+  var latlng = new google.maps.LatLng(43.66 , -79.39);
+  var map_opts = {
+    zoom: 12,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"), map_opts);
+  
+  <% for bike in @bikes %>
+    addMarker('<%= bike.serial %>', <%= bike.lat || 43.66 %>, <%= bike.lng || -79.39 %>);
+  <% end %>
+
+  function addMarker(title, lat, lng) {
+      mrk = new google.maps.Marker({
+          position: new google.maps.LatLng(lat, lng),
+          title: title,
+          map: map
+      });
+  }
+});

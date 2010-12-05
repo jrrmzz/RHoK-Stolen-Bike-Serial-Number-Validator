@@ -1,0 +1,15 @@
+%script{:type => 'text/javascript', :src => "http://maps.google.com/maps/api/js?sensor=true"}
+%script{:type => 'text/javascript', :src => "/bikes.js"}
+
+#map_canvas{:style => 'width: 100%; height: 400px;'}
+%ul#bikes
+    - Bike.all.each do |bike|
+        %li.bike
+            .serial= bike.serial
+            .lat_lng
+                = bike.lat
+                ,
+                = bike.lng
+            .colour= bike.color
+            .make= bike.make
+            .model= bike.model_name
