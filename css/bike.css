@@ -13,6 +13,12 @@ body {
 h1 {
     padding-top:.75em;
     padding-bottom:.25em;
+    margin: 0 0 0 -25%;
+    width:100%;
+}
+
+h2 {
+    font-size:80%;
 }
     
 a {
@@ -114,4 +120,21 @@ div#header {
 
 small {
     font-size: 50%;
+}
+
+ul li {
+    background:black;
+    color:white;
+    border:none;
+    margin:0;
+    list-style-type:disc;
+    list-style-position:inside;
+    padding-left:15px;
+}
+ul {
+    border:none;
+}
+
+ul li a {
+    color:#56B6DE;
 }
