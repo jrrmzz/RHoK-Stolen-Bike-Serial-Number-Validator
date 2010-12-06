@@ -50,7 +50,7 @@ def format_result(template_path, replacement_token, entries):
     '''
     
     if len(entries) == 0:
-        content = '<h1>This serial number has no active entries in CPIC</h1>'
+        content = '<h2>This serial number has no active entries in CPIC</h2>'
     else:
         content = ''
         for entry in entries:
