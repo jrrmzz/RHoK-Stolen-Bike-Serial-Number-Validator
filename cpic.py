@@ -25,12 +25,12 @@ def scrape(serial_number):
         for cell in row.findAll(lambda tag: tag.name == 'td', {'class': 'style12'}, height=None):
             items.append(cell.text)
         entry = {
-            'Status': items[0],
-            'Serial': items[1],
-            'Make': items[2],
-            'Model': items[3],
-            'Color': items[4],
-            'Speeds': items[5],
+            'Status:': items[0],
+            'Serial:': items[1],
+            'Make:': items[2],
+            'Model:': items[3],
+            'Color:': items[4],
+            'Speeds:': items[5],
         }
         entries.append(entry)
     return entries
@@ -39,13 +39,13 @@ def format_result(template_path, replacement_token, entries):
     template = open(template_path, 'rU').read()
     
     row_template = '''
-    <ul class='field'>
-        <li><h3>Status:</h3> %(Status)s</li>
-        <li><h3>Color:</h3> %(Color)s</li>
-        <li><h3>Make</h3> %(Make)s</li>
-        <li><h3>Serial:</h3> %(Serial)s</li>
-        <li><h3>Model:</h3> %(Model)s</li>
-        <li><h3>Speeds:</h3> %(Speeds)s</li>
+    <ul id='CPICResults'>
+        <li><strong>Status:</strong> <span class="StolenStatus">%(Status)s</span></li>
+        <li><strong>Color:</strong> %(Color)s</li>
+        <li><strong>Make:</strong> %(Make)s</li>
+        <li><strong>Serial:</strong> %(Serial)s</li>
+        <li><strong>Model:</strong> %(Model)s</li>
+        <li><strong>Speeds:</strong> %(Speeds)s</li>
     </ul>
     '''
     

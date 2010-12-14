@@ -150,3 +150,15 @@ ul {
 ul li a {
     color:#56B6DE;
 }
+
+.CPICResults{
+
+}
+    .CPICResults strong {
+        font-weight:bold;
+    }
+
+    .CPICResults #StolenStatus {
+        font-color:#f11;
+        font-weight:bold;
+    }
