@@ -11,7 +11,7 @@ body {
     color: #fff;
 }
 
-p, ul li, span
+p, ul li, span, hr
 {   
     max-width:500px;
 }
@@ -26,7 +26,8 @@ h1 {
 }
 
 h2 {
-    font-size:1em;
+    font-size:1.1em;
+    margin-top:1.5em;
 }
     
 a {
@@ -61,7 +62,7 @@ p {
     font-weight: bold;
     text-align: center; }
     .question a {
-        color: white;
+        /*color: white;*/
     }
     .question a:hover {
         text-decoration: none;
