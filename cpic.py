@@ -25,12 +25,12 @@ def scrape(serial_number):
         for cell in row.findAll(lambda tag: tag.name == 'td', {'class': 'style12'}, height=None):
             items.append(cell.text)
         entry = {
-            'Status:': items[0],
-            'Serial:': items[1],
-            'Make:': items[2],
-            'Model:': items[3],
-            'Color:': items[4],
-            'Speeds:': items[5],
+            'Status': items[0],
+            'Serial': items[1],
+            'Make': items[2],
+            'Model': items[3],
+            'Color': items[4],
+            'Speeds': items[5],
         }
         entries.append(entry)
     return entries
