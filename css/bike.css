@@ -1,20 +1,28 @@
 * {
     margin:0;
-    padding:0; }
+    padding:0; 
+    }
 
 body {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.5em;
     font-family: Helvetica, Arial, sans-serif;
     background: black;
     color: #fff;
 }
 
+p, ul li, span
+{   
+    max-width:500px;
+}
+
 h1 {
     padding-top:.75em;
     padding-bottom:.25em;
-    margin: 0 0 0 -25%;
+    margin: 0 0 0 0;
     width:100%;
+    font-size:1.5em;
+    text-align:center;
 }
 
 h2 {
@@ -37,7 +45,8 @@ p {
 }
     
 #container {
-    width: 90%; 
+    max-width:500px;
+    width:90%;
     margin: 0 auto;
     padding-top: 2em; }
 
@@ -69,11 +78,13 @@ p {
     font-size: 75%;
 }
     #links a {
-            margin-right: 1em;
+        margin-right: 1em;
+        text-align:center;
+        word-wrap:none;
     }
     
 div#header {
-    background: #111;
+    background: #000;
     border: none;
 }
     
