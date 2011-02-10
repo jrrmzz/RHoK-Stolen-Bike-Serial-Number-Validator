@@ -75,13 +75,15 @@ def format_result(template_path, replacement_token, entries):
     '''
     
     if len(entries) == 0:
-        content = '<h2>This serial number has no active entries in CPIC</h2>'
-		content +='<p> This could be because:</p>'
-		content +='<ul><li>It is not stolen.</li>'
-		content +='<li>It is stolen but has not been reported as stolen.</li>'
-		content +='<li>It has been reported as stolen very recently.</li>'
-		content +='<li>You entered the wrong serial number.</li>'
-		content +='</ul></p><br/>'
+        content = '''
+		<h2>This serial number has no active entries in CPIC</h2>
+		<p> This could be because:</p>
+		<ul><li>It is not stolen.</li>
+		<li>It is stolen but has not been reported as stolen.</li>
+		<li>It has been reported as stolen very recently.</li>
+		<li>You entered the wrong serial number.</li>
+		</ul></p><br/>
+		'''
     else:
         content = ''
         for entry in entries:
