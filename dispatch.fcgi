@@ -30,6 +30,16 @@ import cpic
 import cgi
 import simplejson
 import re
+import logging
+
+LOG_FILENAME = 'isthisbikestolen.log'
+logger       = logging.getLogger('myapp')
+hdlr         = logging.FileHandler(LOG_FILENAME)
+formatter    = logging.Formatter('%(asctime)s %(message)s')
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
+logger.setLevel(logging.INFO)
+
 
 def myapp(environ, start_response):
     start_response('200 OK', [('Content-Type', 'text/html')])
@@ -47,6 +57,7 @@ def myapp(environ, start_response):
 	response['status'] = 'fail' 
 	response['data']   = [] 
 
+    logger.info('dispatch.cgi: Search for "%s" returned %i results.', serial, len(response['data']))
     return str(cpic.format_result('iphone/result.html', '<!-- $CONTENT -->', response['data']))
 
 if __name__ == '__main__':
