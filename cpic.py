@@ -26,17 +26,19 @@ limitations under the License.
 import urllib
 import re
 
-from BeautifulSoup import BeautifulSoup
+#from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 from pyscraper import PyScraper
+
 
 def scrape(serial_number):
     scraper = PyScraper()
-    scraper.get('http://www.cpic-cipc.ca/English/searchForm.cfm')
+    #scraper.get('http://www.cpic-cipc.ca/English/searchformbikes.cfm')
     
-    url = 'http://www.cpic-cipc.ca/English/searchFormResults.cfm'
+    url = 'http://app.cpic-cipc.ca/English/searchFormResultsbikes.cfm'
     raw_params = {
         'ser': serial_number,
-        'sType': 'Bicycles',
+        #'sType': 'Bicycles',
         'Submit': 'Begin Search',
     }
     
@@ -45,20 +47,38 @@ def scrape(serial_number):
 
     soup = BeautifulSoup(data)
     entries = []
-    for row in soup.findAll(lambda tag: tag.name == 'tr', valign='top'):
-        items = []
-        for cell in row.findAll(lambda tag: tag.name == 'td', {'class': 'style12'}, height=None):
-            items.append(cell.text)
+    main = soup.div(id='wb-main-in')
+    hrs = soup.findAll('hr',title="")
+    for hr in hrs:
+        entry = {}
+        p = hr.find_next_sibling("p")
         entry = {
-            'Status': items[0],
-            'Serial': items[1],
-            'Make': items[2],
-            'Model': items[3],
-            'Color': items[4],
-            'Speeds': items[5],
+          'Status': p.find("strong", text="Status:").find_all_next(text=True)[1],
+          'Serial': p.find("strong", text="Status:").find_all_next(text=True)[4],
+          'Make'  : p.find("strong", text="Status:").find_all_next(text=True)[7],
+          'Model' : p.find("strong", text="Status:").find_all_next(text=True)[10],
+          'Colour': p.find("strong", text="Status:").find_all_next(text=True)[13],
+          'Speeds': p.find("strong", text="Status:").find_all_next(text=True)[16]
         }
+        #print entry
         entries.append(entry)
+
     return entries
+
+    # for row in soup.findAll(lambda tag: tag.name == 'hr', id='wb-cont'):
+    #     items = []
+    #     for cell in row.findAll(lambda tag: tag.name == 'td', {'class': 'style12'}, height=None):
+    #         items.append(cell.text)
+    #     entry = {
+    #         'Status': items[0],
+    #         'Serial': items[1],
+    #         'Make': items[2],
+    #         'Model': items[3],
+    #         'Color': items[4],
+    #         'Speeds': items[5],
+    #     }
+    #     entries.append(entry)
+    # return entries
 
 def format_result(template_path, replacement_token, entries):
     template = open(template_path, 'rU').read()
@@ -66,7 +86,7 @@ def format_result(template_path, replacement_token, entries):
     row_template = '''
     <ul id='CPICResults'>
         <li><strong>Status:</strong> <span class="StolenStatus">%(Status)s</span></li>
-        <li><strong>Color:</strong> %(Color)s</li>
+        <li><strong>Colour:</strong> %(Colour)s</li>
         <li><strong>Make:</strong> %(Make)s</li>
         <li><strong>Serial:</strong> %(Serial)s</li>
         <li><strong>Model:</strong> %(Model)s</li>
@@ -92,7 +112,8 @@ def format_result(template_path, replacement_token, entries):
     page = template.replace(replacement_token, content)
     return page
 
+
 if __name__ == '__main__':
-    serial_number = 'LY22361081'
+    serial_number = '123456'
     entries = scrape(serial_number)
-    print format_result('iphone/result.html', '<!-- $CONTENT -->', entries)
+    #print format_result('iphone/result.html', '<!-- $CONTENT -->', entries)
