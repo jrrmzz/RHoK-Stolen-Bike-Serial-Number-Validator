@@ -58,7 +58,7 @@ def myapp(environ, start_response):
 	response['data']   = [] 
 
     logger.info('dispatch.cgi: Search for "%s" returned %i results.', serial, len(response['data']))
-    return str(cpic.format_result('iphone/result.html', '<!-- $CONTENT -->', response['data']))
+    return str(cpic.format_result('result.html.template', '<!-- $CONTENT -->', response['data']))
 
 if __name__ == '__main__':
     from fcgi import WSGIServer

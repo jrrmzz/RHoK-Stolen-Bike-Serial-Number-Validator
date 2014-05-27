@@ -67,7 +67,7 @@ class DispatchRequest(webapp2.RequestHandler):
         serial_search.put()
 
         self.response.write(str(cpic.format_result(
-            os.path.dirname(__file__)+'/iphone/result.html.template',
+            os.path.dirname(__file__)+'/result.html.template',
             '<!-- $CONTENT -->',
             response['data'])
         ))

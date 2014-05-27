@@ -1,5 +1,5 @@
 application: isthisbikestolen    #.appspot.com
-version: 1
+version: baseline
 
 runtime: python27
 api_version: 1
@@ -49,6 +49,8 @@ handlers:
 # Static files
 - url: /css
   static_dir: css
+- url: /iphone
+  static_dir: iphone
 - url: /js
   static_dir: js
 - url: /images
